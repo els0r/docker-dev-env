@@ -1,0 +1,18 @@
+[user]
+	name = Docker Dev
+[core]
+	editor = vim
+	excludesfile = /root/.gitignore
+[color]
+	diff = auto
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	he = help
+	cl = clone
+    aa = add --all
+[push]
+	default = matching
