@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/lel/Documents/cargo_docs'
+let g:netrw_dirhist_2='/home/lel/Documents/Code/pkg-osagtmi/addon/gocode/src/OSAG/query'
+let g:netrw_dirhist_3='/home/lel/Documents/Code/pkg-osagsplunkapps/addon/apps/mc_email_gateway/default/data/ui/nav'
+let g:netrw_dirhist_4='/home/lel/Documents/Code/mc-dns-training/questions'
+let g:netrw_dirhist_5='/home/lel/Documents/Code/pkg-osagcargoimage/install'
+let g:netrw_dirhist_6='/home/lel/.vim'
+let g:netrw_dirhist_7='/home/lel/Documents/Code/pkg-osagcargo/addon'
+let g:netrw_dirhist_8='/home/lel/Documents/Code/pkg-osaggum/addon/src/gum/logfwd'
+let g:netrw_dirhist_9='/home/lel/Documents/Code'

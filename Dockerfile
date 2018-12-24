@@ -6,7 +6,6 @@ ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 
 RUN apt-get update && apt-get install -y apt-utils dialog && apt-get install -y locales tzdata
-#RUN locale-gen --purge en_US.UTF-8
 RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 
@@ -33,7 +32,7 @@ COPY dotfiles/*.git* /root/
 
 # install zsh
 WORKDIR /root/
-RUN wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh || true
+RUN wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | zsh || true
 
 COPY dotfiles/lel.zsh-theme /root/.oh-my-zsh/themes/
 COPY dotfiles/.zshrc /root/
@@ -49,11 +48,8 @@ RUN apt-get update && apt-get install -y \
       vim
 
 # install vim and vim-go
-COPY dotfiles/.vim /root/
 COPY dotfiles/.vimrc /root/
-
-WORKDIR /usr/local/src
-RUN git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+COPY dotfiles/.vim /root/
 
 # Install docker
 RUN apt-get install -y \
@@ -84,6 +80,7 @@ RUN apt-get update && apt-get install -y \
       socat
 
 # Install tmux
+COPY dotfiles/.tmux.conf /root/
 WORKDIR /usr/local/src
 RUN wget https://github.com/tmux/tmux/releases/download/2.5/tmux-2.5.tar.gz
 RUN tar xzvf tmux-2.5.tar.gz
@@ -91,5 +88,8 @@ WORKDIR /usr/local/src/tmux-2.5
 RUN ./configure
 RUN make
 RUN make install
-RUN rm -rf /usr/local/src/tmux*
 
+# get into code directory
+WORKDIR /home/code/go
+RUN rm -rf /usr/local/src/tmux*
+CMD ["/bin/zsh"]

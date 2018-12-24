@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/lel/Documents/Code/pkg-osaggum/addon/src/gum/processing/upload'
+let g:netrw_dirhist_2='/Users/lel/Documents/Code/pkg-osaggum/addon/src/gum/state'
+let g:netrw_dirhist_3='/Users/lel/Documents/Code/pkg-osaggum/addon/src/gum/state/db/queries'
+let g:netrw_dirhist_4='/shared/home/elk/logstash/etc/logstash/patterns.d'
+let g:netrw_dirhist_5='/shared/home/deluge/watch'
